@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Kosugi Maru", sans-serif;
+}
+
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  background-image: url("./images/doctor-strange.jpg");
+  background-color: #000;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#above-container {
+  display: contents;
+  width: max(400px, 600px);
+}
+
+.page-title {
+  position: absolute;
+  top: 18vh;
+  text-align: center;
+  color: #000000;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: sans-serif;
+  width: 100vw;
+  z-index: -10;
+}
+
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  width: 75vw;
+  height: auto;
+  padding: 1rem 0.25rem;
+  background: linear-gradient(
+    450deg,
+    rgba(255, 255, 255, 0.8),
+    rgba(251, 251, 251, 0.5)
+  );
+  backdrop-filter: 100px;
+  border-radius: 25px;
+  box-shadow: 5px 5px 10px rgb(143, 133, 133);
+}
+
+h2.quiz-title {
+  color: #000000;
+  text-align: center;
+  font-size: 1.25rem;
+  font-family: sans-serif;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+}
+
+h2 ~ ul {
+  margin-left: 2rem;
+  margin-top: 0.8rem;
+}
+
+ul li {
+  margin: 0.25em 0;
+  display: flex;
+  height: 2rem;
+  align-items: center;
+}
+
+label {
+  width: 100%;
+  color: #000;
+  font-weight: 530;
+  flex: 1;
+  line-height: 1.05;
+}
+
+input[type="radio"] {
+  position: relative;
+  top: -2px;
+  width: 20px;
+  height: 1em;
+}
+
+button {
+  width: 100%;
+  background: transparent;
+  padding: 0.5em;
+  padding-bottom: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #7c0c0c;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  order: 1;
+}
+
+#start-btn {
+  position: absolute;
+  bottom: 18vh;
+  background: #fafafaee;
+  color: rgb(0, 0, 0);
+  width: 50vw;
+  padding: 0.5em;
+  font-size: 1.2em;
+  font-weight: bolder;
+  font-family: sans-serif;
+  outline: none;
+  border-radius: 4px;
+}
+
+button.btn1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: unset;
+  margin-top: 1rem;
+
+  &.challenge-again {
+    margin-top: 0;
+  }
+}
+
+button.btn2 {
+  display: none;
+  color: #009d00;
+  justify-content: center;
+}
+
+.result-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  order: -1;
+
+  .question-number-and-tf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    i {
+      margin-right: 0.75rem;
+      font-size: larger;
+    }
+    i.far.fa-circle {
+      color: #009d00;
+    }
+    i.fas.fa-times {
+      color: #d4001c;
+    }
+  }
+
+  .review-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    & > div {
+      width: 90%;
+      margin: 0 auto;
+      line-height: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 2.5rem;
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      p.review-kind {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
